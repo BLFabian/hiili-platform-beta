@@ -1,0 +1,267 @@
+.cardExplainer {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.cardExplainer .subTitle {
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--secondary-color);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cardExplainer .mainTitle {
+  font-weight: 500;
+  line-height: normal;
+  color: var(--main-color);
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--main-color);
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.cardContainer {
+  border: none;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 15px;
+  inset: 0;
+  margin: auto;
+}
+
+.bigCardContainer {
+  height: calc(100% - 360px);
+  width: 100%;
+}
+
+.massiveCardContainer {
+  height: calc(100% - 100px);
+  width: 100%;
+}
+.mediumCardContainer {
+  height: 260px;
+  width: calc((100% / 12) * 8);
+}
+
+.smallCardContainer {
+  height: 260px;
+  width: calc((100% / 12) * 4);
+}
+
+.miniCardContainer {
+  height: 100px;
+  width: calc((100% / 12) * 2);
+}
+
+.longCardContainer {
+  width: 100%;
+  height: 260px;
+}
+
+.coloredCard {
+  background: linear-gradient(
+    157deg,
+    var(--secondary-color) 0%,
+    var(--tertiary-color) 100%
+  );
+}
+
+.cardContainer::after,
+.cardContainer::before {
+  font-size: 12px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  display: none !important;
+}
+
+.cardContainer::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  top: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 7px;
+  padding-top: 3px;
+  color: white;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px,
+    rgba(0, 0, 0, 0.2) 0px 3px 7px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.cardContainer::before {
+  color: transparent;
+  display: block;
+  top: -4px;
+  margin: auto;
+  padding-left: 42px;
+  padding-right: 42px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 0px rgb(0, 0, 0, 0.3) inset;
+}
+
+.breakdownCardContainer::after,
+.breakdownCardContainer::before {
+  content: "Breakdown";
+  background-image: linear-gradient(
+    290deg,
+    var(--secondary-color) 0%,
+    var(--tertiary-color) 100%
+  );
+}
+
+.gradeCardContainer::after,
+.gradeCardContainer::before {
+  content: "Grade";
+  background-image: linear-gradient(
+    290deg,
+    var(--blue-color) 0%,
+    var(--blue-lighter-color) 100%
+  );
+}
+
+.overviewCardContainer::after,
+.overviewCardContainer::before {
+  content: "Grade";
+  background-image: linear-gradient(
+    290deg,
+    var(--red-color) 0%,
+    var(--red-lighter-color) 100%
+  );
+}
+
+.cardContent {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoIcon {
+  color: var(--secondary-color);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.dataTableCard {
+  height: 80%;
+}
+
+.insightContainer {
+  display: flex;
+}
+
+.insightContent {
+  font-size: 16px;
+}
+
+.insightValue {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  font-size: 1.6em;
+}
+.insightValue .unitText {
+  color: inherit;
+  line-height: 1.6em;
+}
+
+.insightName {
+  font-size: 0.8em;
+}
+
+.insightContent {
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--secondary-color);
+  background: white;
+}
+
+.insightContent:hover {
+  color: white;
+  background: var(--secondary-color);
+  fill: var(--secondary-color);
+}
+
+.insightContent .hiiliGradeContainer {
+  font-size: 25px;
+  filter: drop-shadow(1px 2px 1px rgb(0, 0, 0, 0.6));
+}
+
+.insightContent:has(.hiiliGradeContainer) {
+  justify-content: center;
+}
+
+.insightNameAndValues {
+  margin-left: 15%;
+}
+
+.insightIcon {
+  margin-right: 15%;
+  font-size: 20px;
+}
+
+.insightIcon svg {
+}
+
+.averagesContent {
+  width: 100%;
+  padding: 25px;
+  max-width: 250px;
+  top: 15px;
+}
+
+.averagesContainer {
+  width: 100%;
+  color: var(--soft-color);
+  font-size: 14px;
+}
+
+.averagesNameAndValue {
+  display: flex;
+  justify-content: space-between;
+}
+
+.averagesName {
+  align-items: center;
+  display: flex;
+}
+
+.averagesName svg {
+  margin-left: 0.5em;
+}
+
+.averagesValue {
+  font-weight: 600;
+  font-size: 1.4em;
+}
