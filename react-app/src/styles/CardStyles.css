@@ -1,7 +1,8 @@
 .cardExplainer {
   position: absolute;
-  left: 20px;
-  top: 20px;
+  left: 15px;
+  top: 15px;
+  font-size: 14px;
 }
 
 .cardExplainer .subTitle {
@@ -20,7 +21,7 @@
 
 .cardTitle {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--main-color);
   text-transform: uppercase;
   padding-bottom: 20px;
@@ -259,9 +260,10 @@
 
 .averagesName svg {
   margin-left: 0.5em;
+  fill: var(--secondary-color);
 }
 
 .averagesValue {
-  font-weight: 600;
-  font-size: 1.4em;
+  font-weight: 500;
+  font-size: 1.5em;
 }

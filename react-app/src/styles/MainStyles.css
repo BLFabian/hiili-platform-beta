@@ -39,13 +39,19 @@ body {
   --hiili-box: "../assets/images/hiiliBox.png";
 }
 
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
 .sidebarMain {
   z-index: 500;
-  position: absolute;
+  position: relative;
   color: white;
   display: flex;
   flex-direction: column;
   width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
   height: 100%;
   box-shadow: -2px 0px 7px 0px rgb(0, 0, 0, 0.3) inset;
   background: var(--sidebar-color);
@@ -111,6 +117,8 @@ body {
 
 .tabIcon {
   margin-left: 35px;
+  display: flex;
+  align-items: center;
 }
 .tabName {
   margin-left: 15px;
@@ -193,9 +201,9 @@ body {
 }
 
 .bodyMain {
-  width: calc(100% - var(--sidebar-width));
+  width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   right: 0;
   justify-content: center;
   align-items: center;
@@ -299,14 +307,38 @@ body {
   font-weight: 200;
   font-size: 10px;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   position: relative;
   margin-top: auto;
   margin-bottom: 25px;
 }
 
-.bottomSectionWrapper * {
+.bottomSectionContainer {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
   margin-left: 25px;
+}
+
+.signOutButton {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  text-align: left;
+}
+
+.signOutButton > svg {
+  margin-right: 7px;
+}
+
+.userOrganization {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  max-width: 130px;
 }
 
 .privacyPolicy {
@@ -349,4 +381,65 @@ body {
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   padding-right: 0.45em;
   box-shadow: 2px 0px 3px white inset;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 25px;
+  min-height: 50px;
+  height: 50px;
+}
+
+.contactText {
+  text-decoration: none;
+}
+
+.supportContent {
+  height: 100%;
+  width: 100%;
+}
+
+.infoText {
+  position: absolute;
+  font-size: 12px;
+  width: fit-content;
+  height: fit-content;
+  min-width: 150px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 30px;
+  text-align: left;
+  background: var(--soft-color);
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  transform-origin: right;
+}
+.infoText::before {
+  background: inherit;
+  width: 15px;
+  height: 15px;
+  display: block;
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+
+.infoIcon:hover .infoText {
+  opacity: 1;
+  transform: scaleX(1);
 }

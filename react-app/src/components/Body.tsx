@@ -2,6 +2,7 @@ import Home from "./Home";
 import Reports from "./Reports";
 import Sources from "./Sources";
 import Tags from "./Tags";
+import Support from "./Support";
 
 interface Tab {
   name: string;
@@ -24,6 +25,8 @@ function Body({ selectedTab }: BodyProps) {
         return <Reports></Reports>;
       case "Sources":
         return <Sources></Sources>;
+      case "Support":
+        return <Support></Support>;
       default:
         return null;
     }

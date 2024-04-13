@@ -1,13 +1,12 @@
 {
-  "homepage": "https://blfabian.github.io/platform-test",
-  "name": "react-app",
-  "private": true,
+  "name": "hiili-platform-beta",
+  "homepage": "https://blfabian.github.io/hiili-platform-beta",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"

@@ -55,19 +55,24 @@ function Home() {
     let csvFilePath;
     switch (dateRange) {
       case "This week":
-        csvFilePath = "/placeholder_sample_data/totaldataweek.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/totaldataweek.csv";
         break;
       case "This month":
-        csvFilePath = "/placeholder_sample_data/totaldatamonth.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/totaldatamonth.csv";
         break;
       case "This year":
-        csvFilePath = "/placeholder_sample_data/totaldatayear.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/totaldatayear.csv";
         break;
       case "Today":
-        csvFilePath = "/placeholder_sample_data/totaldataday.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/totaldataday.csv";
         break;
       default:
-        csvFilePath = "/placeholder_sample_data/totaldatamonth.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/totaldatamonth.csv";
     }
 
     fetch(csvFilePath)
@@ -99,19 +104,24 @@ function Home() {
     let csvFilePath;
     switch (dateRange) {
       case "This week":
-        csvFilePath = "/placeholder_sample_data/piedataweek.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/piedataweek.csv";
         break;
       case "This month":
-        csvFilePath = "/placeholder_sample_data/piedatamonth.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/piedatamonth.csv";
         break;
       case "This year":
-        csvFilePath = "/placeholder_sample_data/piedatayear.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/piedatayear.csv";
         break;
       case "Today":
-        csvFilePath = "/placeholder_sample_data/piedataday.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/piedataday.csv";
         break;
       default:
-        csvFilePath = "/placeholder_sample_data/piedatamonth.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/piedatamonth.csv";
     }
 
     fetch(csvFilePath)
@@ -135,19 +145,24 @@ function Home() {
     let csvFilePath;
     switch (dateRange) {
       case "This week":
-        csvFilePath = "/placeholder_sample_data/tabledataweek.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/tabledataweek.csv";
         break;
       case "This month":
-        csvFilePath = "/placeholder_sample_data/tabledatamonth.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/tabledatamonth.csv";
         break;
       case "This year":
-        csvFilePath = "/placeholder_sample_data/tabledatayear.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/tabledatayear.csv";
         break;
       case "Today":
-        csvFilePath = "/placeholder_sample_data/tabledataday.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/tabledataday.csv";
         break;
       default:
-        csvFilePath = "/placeholder_sample_data/tabledatamonth.csv";
+        csvFilePath =
+          "https://blfabian.github.io/hiili-platform-beta/placeholder_sample_data/tabledatamonth.csv";
     }
 
     fetch(csvFilePath)
@@ -204,6 +219,8 @@ function Home() {
           size="medium"
           type="breakdown"
           subtype={dateRange}
+          info={true}
+          infoText={"Values calculated across all aggregated data."}
           explainer={true}
           cardTitle={
             <>
@@ -225,6 +242,7 @@ function Home() {
           type="averages"
           subtype={dateRange}
           info={true}
+          infoText={"Values calculated on a per impression basis."}
           explainer={true}
           view="averages"
         >

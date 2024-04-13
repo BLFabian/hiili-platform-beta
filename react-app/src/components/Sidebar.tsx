@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { FaRightFromBracket } from "react-icons/fa6";
 
 interface SidebarProps {
   tabs: Tab[];
   selectedIndex: number;
   onSelectTab: (index: number, name: string) => void;
+  userOrganization: string;
 }
 
 interface Tab {
@@ -14,7 +16,12 @@ interface Tab {
 
 var toggledAnimation = false;
 
-function Sidebar({ tabs, selectedIndex, onSelectTab }: SidebarProps) {
+function Sidebar({
+  tabs,
+  selectedIndex,
+  onSelectTab,
+  userOrganization,
+}: SidebarProps) {
   const handleTabClick = (index: number, name: string) => {
     onSelectTab(index, name);
   };
@@ -64,13 +71,19 @@ function Sidebar({ tabs, selectedIndex, onSelectTab }: SidebarProps) {
           </div>
         ))}
       </div>
-      <div className="logOut"></div>
       <div className="bottomSectionWrapper">
-        <span>Copyright © 2024 Hiili</span>
-        <span>All rights reserved.</span>
-        <a className="privacyPolicy" href="https://hiili.org/privacy">
-          Privacy Policy
-        </a>
+        <div className="bottomSectionContainer">
+          <div className="userOrganization">{userOrganization}</div>
+          <a href="https://blfabian.github.io/" className="signOutButton">
+            <FaRightFromBracket />
+            Sign out
+          </a>
+          <span>Copyright © 2024 Hiili</span>
+          <span>All rights reserved.</span>
+          <a className="privacyPolicy" href="https://hiili.org/privacy">
+            Privacy Policy
+          </a>
+        </div>
       </div>
     </div>
   );

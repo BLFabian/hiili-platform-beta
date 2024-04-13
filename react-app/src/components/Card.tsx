@@ -11,6 +11,7 @@ interface CardProps {
   children?: React.ReactNode;
   cardTitle?: string | JSX.Element;
   info?: boolean;
+  infoText?: string;
   view?: string;
 }
 
@@ -33,6 +34,7 @@ function Card({
   cardTitle,
   view,
   info,
+  infoText,
   children,
 }: CardProps) {
   return (
@@ -48,6 +50,7 @@ function Card({
           {info && (
             <div className="infoIcon">
               <BsInfoCircle />
+              {infoText && <div className="infoText">{infoText}</div>}
             </div>
           )}
           {explainer && (

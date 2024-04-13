@@ -245,6 +245,7 @@
 
 /* Styling the scrollbar in Chrome and Safari */
 .dataTableContainer::-webkit-scrollbar {
+  -webkit-appearance: none;
   width: 10px;
 }
 
@@ -254,6 +255,7 @@
   ); /* Set thumb color for Chrome and Safari */
   border: 20px solid transparent;
   background-clip: content-box;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .dataTableContainer::-webkit-scrollbar-track {

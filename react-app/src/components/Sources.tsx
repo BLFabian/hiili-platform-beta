@@ -1,4 +1,5 @@
 import Card from "./Card";
+import { FaPlusCircle } from "react-icons/fa";
 
 /* THIS COMPONENT IS PRETTY MUCH ENTIRELY PLACEHOLDER AND MOCK-UP*/
 
@@ -14,6 +15,12 @@ function Sources() {
           cardTitle="API CONNECTIONS"
           view="dataTable"
         >
+          {" "}
+          <div className="tableOptions">
+            <button className="tableOptionsButton">
+              <FaPlusCircle />
+            </button>
+          </div>
           <div className="dataTableContainer">
             <table className="dataTable">
               <thead>
