@@ -1,0 +1,237 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Noto Sans";
+  --main-color: #222222;
+  --other-color: #393939;
+  --soft-color: #575757;
+  --softest-color: #7e7e7e;
+  --secondary-color: #ff8e15;
+  --tertiary-color: #ffb362;
+  --blue-color: #157eff;
+  --blue-lighter-color: #62a8ff;
+  --red-color: #ff153c;
+  --red-lighter-color: #ff5672;
+  --background-color: white;
+  --sidebar-selector-color: var(--background-color);
+  --sidebar-color: var(--secondary-color);
+
+  --tab-height: 70px;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebarMain {
+  z-index: 500;
+  position: absolute;
+  background: var(--sidebar-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+  height: 100%;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+  box-shadow: -2px 0px 7px 0px rgb(0, 0, 0, 0.3) inset;
+}
+
+.sidebarMain::after {
+  background: var(--sidebar-selector-color);
+  width: 5px;
+  height: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -5px;
+}
+
+.sidebarTab {
+  width: calc(100% - 5px);
+  height: var(--tab-height);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  transition: all 150ms ease-in-out;
+  position: relative;
+  z-index: 20;
+  color: white;
+  transition: color 100ms ease-in-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.activeTab {
+  color: var(--main-color);
+}
+
+.carbonDioxide {
+  text-transform: none;
+  color: var(--soft-color);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.tabContent {
+  display: flex;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  width: calc(100% - 10px);
+}
+
+.hiiliLogo {
+  background: url("../assets/images/hiiliWhite.png") no-repeat center / contain;
+  width: 100%;
+  height: 135px;
+}
+
+.sidebarTabs {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+
+.tabIcon {
+  margin-left: 35px;
+}
+.tabName {
+  margin-left: 15px;
+}
+
+.sidebarSelectorWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebarSelector {
+  width: calc(100% - 10px);
+  height: 70px;
+  background: var(--sidebar-selector-color);
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  border-radius: 99px 0px 0px 99px;
+  transition: margin-top 125ms ease-in-out;
+  transform-origin: right;
+  box-shadow: -3px 2px 3px rgb(0, 0, 0, 0.4),
+    2px 0px 2px rgb(255, 255, 255, 0.2) inset;
+}
+
+.sideBarSelectorToggle1 {
+  animation: sideBarSelectorToggleAnim1 200ms ease-in-out;
+}
+
+.sideBarSelectorToggle2 {
+  animation: sideBarSelectorToggleAnim2 200ms ease-in-out;
+}
+
+@keyframes sideBarSelectorToggleAnim1 {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.9) scaleX(0.75);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes sideBarSelectorToggleAnim2 {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.9) scaleX(0.75);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.sidebarSelector::before {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  border-radius: 0px 0px 20px 0px;
+  top: -60px;
+  right: 0;
+  box-shadow: 5px 15px 0px 0px var(--sidebar-selector-color);
+}
+
+.sidebarSelector::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  border-radius: 0px 20px 0px 0px;
+  bottom: -60px;
+  right: 0;
+  box-shadow: 5px -15px 0px 0px var(--sidebar-selector-color);
+}
+
+.bodyMain {
+  width: calc(100% - 175px);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--background-color);
+}
+
+.bodyContainer {
+  padding: 30px;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* Adjusts the space between the grid items */
+  align-content: center;
+  justify-content: center;
+}
+
+.bottomSectionWrapper {
+  font-weight: 200;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+.bottomSectionWrapper * {
+  margin-left: 25px;
+}
+
+.privacyPolicy {
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+}

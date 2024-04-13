@@ -1,0 +1,445 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-family: "Noto Sans";
+  --main-color: #222222;
+  --other-color: #393939;
+  --soft-color: #575757;
+  --softest-color: #7e7e7e;
+  --secondary-color: #ff8e15;
+  --tertiary-color: #ffc485;
+  --blue-color: #157eff;
+  --blue-lighter-color: #62a8ff;
+  --red-color: #ff153c;
+  --red-lighter-color: #ff5672;
+  --background-color: white;
+  --sidebar-selector-color: var(--background-color);
+  --sidebar-color: var(--secondary-color);
+  --sidebar-width: 170px;
+  --topbar-height: 40px;
+  --tab-height: 70px;
+  --value-wrapper-width: 100px;
+
+  --body-padding: 30px;
+
+  -webkit-tap-highlight-color: transparent;
+
+  --hiili-logo: "../assets/images/hiiliWhite.png";
+  --hiili-box: "../assets/images/hiiliBox.png";
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebarMain {
+  z-index: 500;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100%;
+  box-shadow: -2px 0px 7px 0px rgb(0, 0, 0, 0.3) inset;
+  background: var(--sidebar-color);
+  background: linear-gradient(
+    157deg,
+    var(--secondary-color) 0%,
+    var(--tertiary-color) 100%
+  );
+}
+
+.sidebarTab {
+  width: calc(100% - 5px);
+  height: var(--tab-height);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  transition: all 150ms ease-in-out;
+  position: relative;
+  z-index: 20;
+  color: white;
+  transition: color 100ms ease-in-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.activeTab {
+  color: var(--main-color);
+}
+
+.unitText {
+  text-transform: none;
+  color: inherit;
+  font-weight: 400;
+  font-size: 0.7em;
+}
+
+.tabContent {
+  display: flex;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  width: calc(100% - 10px);
+  cursor: pointer;
+}
+
+.hiiliLogo {
+  background: url("../assets/images/hiiliWhite.png") no-repeat center / contain;
+  width: 100%;
+  height: 135px;
+}
+
+.sidebarTabs {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+
+.tabIcon {
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+}
+.tabName {
+  margin-left: 15px;
+}
+
+.sidebarSelectorWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebarSelector {
+  width: calc(100% - 10px);
+  height: 70px;
+  background: var(--sidebar-selector-color);
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  border-radius: 99px 0px 0px 99px;
+  transition: margin-top 125ms ease-in-out;
+  transform-origin: right;
+  box-shadow: -3px 2px 3px rgb(0, 0, 0, 0.4),
+    2px 0px 2px rgb(255, 255, 255, 0.2) inset;
+}
+
+.sideBarSelectorToggle1 {
+  animation: sideBarSelectorToggleAnim1 200ms ease-in-out;
+}
+
+.sideBarSelectorToggle2 {
+  animation: sideBarSelectorToggleAnim2 200ms ease-in-out;
+}
+
+@keyframes sideBarSelectorToggleAnim1 {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.9) scaleX(0.75);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes sideBarSelectorToggleAnim2 {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.9) scaleX(0.75);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.sidebarSelector::before,
+.sidebarSelector::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 60px;
+  width: auto;
+  aspect-ratio: 1 / 2;
+  background: transparent;
+}
+
+.sidebarSelector::before {
+  border-radius: 0px 0px 20px 0px;
+  top: -60px;
+  right: 0;
+  box-shadow: 5px 15px 0px 0px var(--sidebar-selector-color);
+}
+
+.sidebarSelector::after {
+  border-radius: 0px 20px 0px 0px;
+  bottom: -60px;
+  right: 0;
+  box-shadow: 5px -15px 0px 0px var(--sidebar-selector-color);
+}
+
+.bodyMain {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--background-color);
+}
+
+.topBar {
+  height: var(--topbar-height);
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.dateRangeSelectorWrapper {
+  width: var(--value-wrapper-width);
+  margin-left: 10px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  transition: margin-left 100ms ease-in-out;
+}
+
+.dateRangeSelector {
+  color: transparent;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  width: fit-content;
+  padding: 0.35em 0.7em 0.35em 0.7em;
+  margin: auto;
+}
+
+.topBarOptions {
+  display: flex;
+  font-size: 14px;
+}
+
+.topBarOptionContainer {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.dateRangeHolder {
+  display: flex;
+}
+
+.valueWrapper {
+  width: var(--value-wrapper-width);
+  margin-left: 10px;
+  z-index: 10;
+}
+
+.valueHolder {
+  color: var(--secondary-color);
+  background: transparent;
+  border-radius: 50px;
+  width: fit-content;
+  padding: 0.35em 0.7em 0.35em 0.7em;
+  margin: auto;
+  transition: color 100ms ease-in-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.activeValueHolder {
+  color: white;
+}
+
+.contentContainer {
+  box-sizing: border-box;
+  padding: var(--body-padding);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  container-type: size;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 1400px;
+  transition: width 150ms ease-in-out;
+}
+
+.topBarPresent {
+  height: calc(100% - var(--topbar-height));
+  padding-top: calc(var(--body-padding) / 2);
+}
+
+.bottomSectionWrapper {
+  font-weight: 200;
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+.bottomSectionContainer {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.signOutButton {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  text-align: left;
+}
+
+.signOutButton > svg {
+  margin-right: 7px;
+}
+
+.userOrganization {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  max-width: 130px;
+}
+
+.privacyPolicy {
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+}
+
+.kiloGram {
+  font-size: 0.7em;
+}
+
+.hiiliBox {
+  background: url("../assets/images/hiiliBox.png") no-repeat center / contain;
+  background-color: var(--main-color);
+}
+
+.hiiliGradeContainer {
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hiiliGradeBox {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.hiiliColorGrade {
+  font-family: "Noto Sans", monospace;
+  font-weight: 600;
+  width: 3em;
+  height: 1.5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  padding-right: 0.45em;
+  box-shadow: 2px 0px 3px white inset;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 25px;
+  min-height: 50px;
+  height: 50px;
+}
+
+.contactText {
+  text-decoration: none;
+}
+
+.supportContent {
+  height: 100%;
+  width: 100%;
+}
+
+.infoText {
+  position: absolute;
+  font-size: 12px;
+  width: fit-content;
+  height: fit-content;
+  min-width: 150px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 30px;
+  text-align: left;
+  background: var(--soft-color);
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  transform-origin: right;
+}
+.infoText::before {
+  background: inherit;
+  width: 15px;
+  height: 15px;
+  display: block;
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+
+.infoIcon:hover .infoText {
+  opacity: 1;
+  transform: scaleX(1);
+}
