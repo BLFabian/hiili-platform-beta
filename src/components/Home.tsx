@@ -224,7 +224,7 @@ function Home() {
           explainer={true}
           cardTitle={
             <>
-              <span>Emissions per channel</span>
+              <span>Emissions per device</span>
               <span className="carbonDioxide unitText">
                 {" "}
                 (CO<sub>2</sub>)
